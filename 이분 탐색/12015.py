@@ -2,7 +2,7 @@
 
 n = int(input())
 arr = list(map(int, input().split()))
-print(arr)
+
 cmp_list = [0]
 
 for val in arr:
