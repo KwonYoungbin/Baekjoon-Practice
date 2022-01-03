@@ -1,18 +1,11 @@
-x = []
-y = []
-for _ in range(3):
-    nx, ny = map(int, input().split())
-    x.append(nx)
-    y.append(ny)
-
-r_x, r_y = 0, 0
-for i in x:
-    if x.count(i) == 1:
-        r_x = i
+while True:
+    lines = list(map(int, input().split()))
+    lines.sort()
+    x, y, z = lines
+    if x == y == z == 0:
         break
     
-for i in y:
-    if y.count(i) == 1:
-        r_y = i
-        break
-print(r_x, r_y)
+    if x**2 + y**2 == z**2:
+        print('right')
+    else:
+        print('wrong')
