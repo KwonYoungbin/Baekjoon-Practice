@@ -1,3 +1,5 @@
+# DFS와 DP를 결합한 문제로, 아직 완벽히 이해 X
+
 def scale(weights, n, now, left, right, dp, set_arr):
     val = abs(left - right)
     set_arr.add(val)
