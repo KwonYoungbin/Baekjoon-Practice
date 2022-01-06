@@ -32,10 +32,10 @@ for _ in range(e):
 v1, v2 = map(int, sys.stdin.readline().split())
 distance = [[INF]*(n+1) for _ in range(n+1)]
 
-# for start in range(1, n+1):
 dijkstra(graph, 1, distance)
 dijkstra(graph, v1, distance)
 dijkstra(graph, v2, distance)
-dijkstra(graph, n, distance)
-    
-print(min(distance[1][v1]+distance[v1][v2]+distance[v2][n], distance[1][v2]+distance[v2][v1]+distance[v1][n]))
+
+v1_path = distance[1][v1]+distance[v1][v2]+distance[v2][n]
+v2_path = distance[1][v2]+distance[v2][v1]+distance[v1][n]
+print(min(v1_path, v2_path) if v1_path < INF or v2_path < INF else -1)
