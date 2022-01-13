@@ -5,4 +5,4 @@ while '11' in S or '00' in S:
 if len(S) == 1:
     print(0)
 else:
-    print(min(S.count(0), S.count(1)))
+    print(min(S.count('0'), S.count('1')))
