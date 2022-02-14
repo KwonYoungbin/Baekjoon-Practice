@@ -1,5 +1,4 @@
 S = list(input())
-
 stack = []
 result = 0
 temp = 1
