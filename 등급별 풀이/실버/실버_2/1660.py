@@ -1,20 +1,21 @@
-import sys
-input = sys.stdin.readline
-
 N = int(input())
-nums = []
-num = 0
-idx = 1
-while num < N:
-    num += (idx * (idx + 1)) // 2
-    nums.append(num)
-    idx += 1
-dp = [float('inf')] * (N + 1)
-for i in range(1, N + 1):
-    for num in nums:
-        if num == i:
-            dp[i] = 1
-            break
-        if num > i: break
-        dp[i] = min(dp[i], 1 + dp[i - num])
+tri = [0, 1]
+adder = 1
+counter = 2
+while N > tri[-1]:
+    adder += counter
+    tri.append(tri[-1]+adder)
+    counter += 1
+
+dp = [int(1e9)] * (N+1)
+dp[0], dp[1] = 0, 1
+
+for i in range(2, N+1):
+    if i in tri:
+        dp[i] = 1
+    else:
+        for val in tri:
+            if val > i:
+                break
+            dp[i] = min(dp[i], dp[i-val]+1)
 print(dp[N])
