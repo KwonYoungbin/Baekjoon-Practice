@@ -50,9 +50,6 @@ for i in range(C-1, -1, -1):
     if flag:
         break
 
-print(x_start, x_end)
-print(y_start, y_end)
-    
 for x in range(x_start, x_end+1):
     for y in range(y_start, y_end+1):
         print(result[x][y], end='')
